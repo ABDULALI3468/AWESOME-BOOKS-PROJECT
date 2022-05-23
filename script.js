@@ -27,6 +27,11 @@ function remove(index) {
   localStorage.setItem('books', JSON.stringify(books));
 }
 
+const removeButton = document.querySelector('.heading');
+removeButton.addEventListener('click', () => {
+  remove();
+});
+
 window.onload = () => {
   if (localStorage.getItem('books')) {
     books = JSON.parse(localStorage.getItem('books'));
