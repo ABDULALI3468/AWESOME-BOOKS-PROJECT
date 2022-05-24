@@ -3,21 +3,33 @@ const author = document.querySelector('.author_input');
 const registeredBooks = document.querySelector('.registered_books');
 const addButton = document.querySelector('.add-book');
 
+
 let books = [];
+const emtpty = [];
+if (localStorage.getItem('books')) {
+  if (localStorage.getItem('books').length > 2){
+    registeredBooks.classList.add('registered_books2');
+  }
+}
+
+if (localStorage.getItem('books')) {
+  if (localStorage.getItem('books').length <= 2){
+    registeredBooks.classList.remove('registered_books2');
+  }
+}
 
 function displayBook() {
   registeredBooks.innerHTML = '';
   for (let i = 0; i < books.length; i += 1) {
     registeredBooks.innerHTML += `
-    <div>
-      <p class="title">${books[i].title}</p>
-      <p class="author">${books[i].author}</p>
-      <button class="button" onclick="remove(${i})">remove</button>
-      <hr/>
+    <div class="container container${i % 2}">
+      <p class="title">"${books[i].title}" by ${books[i].author}</p>
+      <button class="button" onclick="remove(${i})">Remove</button>
     </div>
    `;
     title.value = '';
     author.value = '';
+    const container = document.querySelector('.container');
   }
 }
 
@@ -25,6 +37,11 @@ function remove(index) {
   books.splice(index, 1);
   displayBook();
   localStorage.setItem('books', JSON.stringify(books));
+  if (localStorage.getItem('books')) {
+    if (localStorage.getItem('books').length <= 2){
+      registeredBooks.classList.remove('registered_books2');
+    }
+  }
 }
 
 const removeButton = document.querySelector('.heading');
@@ -40,11 +57,23 @@ window.onload = () => {
 };
 
 addButton.addEventListener('click', () => {
-  const book = {
-    title: title.value,
-    author: author.value,
+  class bookClass {
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
+    }
   };
+  const book = new bookClass(title.value, author.value)
+  // console.log(book)
+  //   title: title.value,
+  //   author: author.value,
+  // };
   books.push(book);
   displayBook();
   localStorage.setItem('books', JSON.stringify(books));
+  if (localStorage.getItem('books')) {
+    if (localStorage.getItem('books').length > 2){
+      registeredBooks.classList.add('registered_books2');
+    }
+  }
 });
