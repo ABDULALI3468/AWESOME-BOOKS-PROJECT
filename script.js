@@ -3,17 +3,36 @@ const author = document.querySelector('.author_input');
 const registeredBooks = document.querySelector('.registered_books');
 const addButton = document.querySelector('.add-book');
 
-
 let books = [];
-const emtpty = [];
 if (localStorage.getItem('books')) {
-  if (localStorage.getItem('books').length > 2){
+  if (localStorage.getItem('books').length > 2) {
     registeredBooks.classList.add('registered_books2');
   }
 }
 
+function updateLocalStorage() {
+  localStorage.setItem('books', JSON.stringify(books));
+}
+
+class BookClass {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  addbook = (book) => {
+    books.push(book);
+    updateLocalStorage();
+  };
+
+  removeBook = (index) => {
+    books.splice(index, 1);
+    updateLocalStorage();
+  };
+}
+
 if (localStorage.getItem('books')) {
-  if (localStorage.getItem('books').length <= 2){
+  if (localStorage.getItem('books').length <= 2) {
     registeredBooks.classList.remove('registered_books2');
   }
 }
@@ -29,16 +48,16 @@ function displayBook() {
    `;
     title.value = '';
     author.value = '';
-    const container = document.querySelector('.container');
   }
 }
 
 function remove(index) {
-  books.splice(index, 1);
+  const book = new BookClass();
+  book.removeBook(index);
   displayBook();
   localStorage.setItem('books', JSON.stringify(books));
   if (localStorage.getItem('books')) {
-    if (localStorage.getItem('books').length <= 2){
+    if (localStorage.getItem('books').length <= 2) {
       registeredBooks.classList.remove('registered_books2');
     }
   }
@@ -57,22 +76,12 @@ window.onload = () => {
 };
 
 addButton.addEventListener('click', () => {
-  class bookClass {
-    constructor(title, author) {
-      this.title = title;
-      this.author = author;
-    }
-  };
-  const book = new bookClass(title.value, author.value)
-  // console.log(book)
-  //   title: title.value,
-  //   author: author.value,
-  // };
-  books.push(book);
+  const book = new BookClass(title.value, author.value);
+  book.addbook(book);
   displayBook();
   localStorage.setItem('books', JSON.stringify(books));
   if (localStorage.getItem('books')) {
-    if (localStorage.getItem('books').length > 2){
+    if (localStorage.getItem('books').length > 2) {
       registeredBooks.classList.add('registered_books2');
     }
   }
