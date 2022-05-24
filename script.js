@@ -1,35 +1,35 @@
+/* eslint no-use-before-define: ["error", { "variables": false }] */
 const title = document.querySelector('.title_input');
 const author = document.querySelector('.author_input');
 const registeredBooks = document.querySelector('.registered_books');
 const addButton = document.querySelector('.add-book');
 
-let books = [];
 if (localStorage.getItem('books')) {
   if (localStorage.getItem('books').length > 2) {
     registeredBooks.classList.add('registered_books2');
   }
 }
 
-function updateLocalStorage() {
-  localStorage.setItem('books', JSON.stringify(books));
-}
-
 class BookClass {
   constructor(title, author) {
     this.title = title;
     this.author = author;
+    this.books = [];
   }
 
   addbook = (book) => {
     books.push(book);
-    updateLocalStorage();
+    localStorage.setItem('books', JSON.stringify(books));
   };
 
   removeBook = (index) => {
     books.splice(index, 1);
-    updateLocalStorage();
+    localStorage.setItem('books', JSON.stringify(books));
   };
 }
+
+const booksArr = new BookClass();
+let { books } = booksArr;
 
 if (localStorage.getItem('books')) {
   if (localStorage.getItem('books').length <= 2) {
