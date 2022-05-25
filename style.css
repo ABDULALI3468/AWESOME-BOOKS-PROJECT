@@ -5,6 +5,12 @@
   font-family: sans-serif;
 }
 
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .nav-container {
   font-family: sans-serif;
   background-color: rgb(192, 192, 192);
@@ -38,6 +44,7 @@
 .date {
   text-align: right;
   padding: 2rem 4rem;
+  margin-top: 5rem;
 }
 
 .heading {
@@ -52,6 +59,7 @@
 }
 
 .add-form {
+  display: none;
   text-align: center;
   margin-top: 2rem;
   font-size: 2rem;
@@ -121,17 +129,23 @@
   box-shadow: 3px 3px #888;
 }
 
-.contact-info h2 {
-  text-align: center;
-  padding: 2rem;
+.contact-info {
+  width: 75%;
+  margin-inline: auto;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
 }
 
 .contact-info h3 {
-  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .contact-info-container {
-  margin: 2rem 0 2rem 42rem;
+  margin-top: 1rem;
+  margin-left: 4rem;
 }
 
 .info-item {
@@ -139,15 +153,10 @@
 }
 
 .footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
   background-color: rgb(221, 221, 221);
   padding: 1rem 5rem;
   margin-top: 2rem;
-}
-
-.add-form {
-  display: none;
-}
-
-.contact-info {
-  display: none;
 }

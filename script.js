@@ -25,12 +25,12 @@ class BookClass {
     this.books = [];
   }
 
-  addbook = book => {
+  addbook = (book) => {
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
   };
 
-  removeBook = index => {
+  removeBook = (index) => {
     books.splice(index, 1);
     localStorage.setItem('books', JSON.stringify(books));
   };
@@ -97,6 +97,13 @@ addButton.addEventListener('click', () => {
 
 date.innerHTML = dataTime;
 
+list.addEventListener('click', () => {
+  registeredBooks.style.display = 'block';
+  contactInfo.style.display = 'none';
+  addForm.style.display = 'none';
+  updateHeading.innerHTML = 'All awesome books';
+});
+
 addNew.addEventListener('click', () => {
   addForm.style.display = 'block';
   registeredBooks.style.display = 'none';
@@ -105,15 +112,8 @@ addNew.addEventListener('click', () => {
 });
 
 contact.addEventListener('click', () => {
-  contactInfo.style.display = 'block';
+  contactInfo.style.display = 'flex';
   registeredBooks.style.display = 'none';
   addForm.style.display = 'none';
   updateHeading.innerHTML = 'Contact Information';
-});
-
-list.addEventListener('click', () => {
-  registeredBooks.style.display = 'block';
-  contactInfo.style.display = 'none';
-  addForm.style.display = 'none';
-  updateHeading.innerHTML = 'All awesome books';
 });
