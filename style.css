@@ -1,3 +1,84 @@
 * {
   font-size: 102%;
 }
+
+.heading {
+  font-family: sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.line {
+  width: 20%;
+  border: 1px solid black;
+}
+
+.add-form {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.title_input,
+.author_input {
+  width: 20%;
+  font-size: 1rem;
+  border: 2px solid black;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.add-book {
+  font-size: 1rem;
+  margin-left: 17rem;
+  border: 2px solid rgb(77, 77, 77);
+  padding: 0.5rem 1rem;
+  box-shadow: 5px 5px #888;
+  transition: all 0.4s;
+}
+
+.add-book:hover,
+.add-book:active {
+  background-color: #535353;
+  color: white;
+  box-shadow: 3px 3px #888;
+}
+
+.registered_books2 {
+  border: 2px solid black;
+  margin: 2rem 4rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.container0 {
+  background: rgba(141, 141, 141, 0.466);
+}
+
+.container1 {
+  background: white;
+}
+
+.title {
+  margin: 0.4rem;
+}
+
+.button {
+  font-size: 1rem;
+  border: 2px solid rgb(77, 77, 77);
+  padding: 0.5rem 1rem;
+  box-shadow: 5px 5px #888;
+  transition: all 0.4s;
+}
+
+.button:hover,
+.button:active {
+  background-color: #535353;
+  color: white;
+  box-shadow: 3px 3px #888;
+}
