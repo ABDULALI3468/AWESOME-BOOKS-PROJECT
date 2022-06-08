@@ -3,21 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Awesome books</title>
   </head>
   <body>
-    <h1 class="heading">All awesome books</h1>
+    <nav class="navigation">
+      <ul class="nav-container">
+        <li class="logo-container">
+          <a class="nav logo" href="#">Awesome Books</a>
+        </li>
+        <li class="list"><a class="nav" href="#">List</a></li>
+        <li class="add-new"><a class="nav" href="#">Add new</a></li>
+        <li class="contact"><a class="nav" href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <p class="date">date</p>
+
+    <h1 class="heading" id="heading">All awesome books</h1>
+
     <article class="registered_books"></article>
-    <hr class="line">
+
     <form action="#" class="add-form">
-      <label for="title">Add a new book</label><br>
       <input id="title" class="title_input" type="text" placeholder="Title" />
       <br />
       <input class="author_input" type="text" placeholder="Author" />
       <br />
       <button type="submit" class="add-book">Add</button>
     </form>
+
+    <article class="contact-info">
+      <h2>Do you have any questions or you just wanna say "Hello"?</h2>
+      <h3>You can reach out to us!</h3>
+      <ul class="contact-info-container">
+        <li class="info-item">Our e-mail: example@gmail.com</li>
+        <li class="info-item">Our phone number: +1234567890</li>
+        <li class="info-item">Our address: 333 18th avenue San Francisco, CA</li>
+      </ul>
+    </article>
+
+    <footer class="contact-footer footer">
+      <h6>Copyright ...</h6>
+    </footer>
   </body>
 </html>

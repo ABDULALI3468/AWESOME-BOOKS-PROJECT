@@ -1,5 +1,50 @@
 * {
+  padding: 0;
+  margin: 0;
   font-size: 102%;
+  font-family: sans-serif;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-container {
+  font-family: sans-serif;
+  background-color: rgb(192, 192, 192);
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  justify-content: flex-end;
+  padding: 1.2rem 4rem;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+  transition: all 0.4s;
+  padding: 0.2rem 1rem;
+}
+
+.nav:hover,
+.nav:active {
+  background-color: #535353;
+  color: white;
+  box-shadow: 3px 3px #888;
+}
+
+.logo-container {
+  margin-right: auto;
+}
+
+.date {
+  text-align: right;
+  padding: 2rem 4rem;
+  margin-top: 5rem;
 }
 
 .heading {
@@ -14,6 +59,7 @@
 }
 
 .add-form {
+  display: none;
   text-align: center;
   margin-top: 2rem;
   font-size: 2rem;
@@ -81,4 +127,36 @@
   background-color: #535353;
   color: white;
   box-shadow: 3px 3px #888;
+}
+
+.contact-info {
+  width: 75%;
+  margin-inline: auto;
+  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.contact-info h3 {
+  margin-top: 0.5rem;
+}
+
+.contact-info-container {
+  margin-top: 1rem;
+  margin-left: 4rem;
+}
+
+.info-item {
+  padding: 0.2rem;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(221, 221, 221);
+  padding: 1rem 5rem;
+  margin-top: 2rem;
 }
